@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0c0c0c;
+    color: #bbb;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    user-select: none;
+}
+
+#topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #141414;
+    border: 1px solid #333;
+    padding: 5px 10px;
+}
+
+#game-title {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #c55;
+}
+
+#stats-bar {
+    font-size: 13px;
+    color: #999;
+}
+
+#stats-bar .hp       { color: #4d4; }
+#stats-bar .hp.danger { color: #e33; animation: blink 0.5s step-end infinite; }
+#stats-bar .gold     { color: #fc0; }
+#stats-bar .floor-num { color: #7af; }
+
+@keyframes blink {
+    50% { opacity: 0.25; }
+}
+
+#game-canvas {
+    display: block;
+    border: 1px solid #2e2e2e;
+}
+
+#message-log {
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    padding: 6px 10px;
+    height: 108px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.msg        { color: #666; }
+.msg.latest { color: #ccc; }
+.msg.combat { color: #d77; }
+.msg.loot   { color: #7c7; }
+.msg.system { color: #79c; }
+
+#hint {
+    text-align: center;
+    font-size: 11px;
+    color: #383838;
+    padding: 2px 0;
+}
